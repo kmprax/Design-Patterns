@@ -1,0 +1,29 @@
+Kimberly M. Praxel
+11/9/16
+Exercise: Command Pattern
+Command_Pattern_Summary.txt
+
+Assignment instructions = A short summary document (two paragraphs) describing your understanding of the Command Pattern. 
+Your summary should follow the terminology and design pattern artifacts described in the video links above.
+
+The command pattern is basically hiding data. What it does is it takes an encapsulated object that holds all the information
+that is needed to perform an action. When you think of the command pattern 4 terms should always come to mind they are the key 
+parts of the command pattern: 
+1. Command 
+2. Concrete Command 
+3. Receiver 
+4. Invoker
+
+Command is an interface that just has an execute method in it. We do not know what the execute will do this will be determined 
+in the Concrete Command class. Concrete Command is a class that implements the Command interface it will have it own execute method
+and inside that method they will do something(perform an action) to an object that is being stored within the concrete command class as 
+private field. Now the object that is being stored inside that field is called the receiver. The receiver is going to be a class that 
+stores the information about that object so an example would be if concrete command execute said turn off the light the receiver class 
+would be the light. Which would have the method for turning off the light. Then you have the Invoker which is a list or queue of that will
+take the list or queue of your commands and then execute them. 
+
+Command = interface - void execute();
+Concrete Command = TurnOnCommand implement Command Interface - void execute(){ light.turnOn}
+Concrete Command = TurnOffCommand implement Command Interface - void execute(){ light.turnOff}
+Receiver = Light class - void turnOn - void turnOff
+Invoker - LightSwitch class - List<Command> - void executeCommands
